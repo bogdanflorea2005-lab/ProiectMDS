@@ -198,7 +198,7 @@ public class MDSUI extends javax.swing.JFrame {
 
         Label_ChangeFont1.setText("Interface size:");
 
-        ComBox_UIsize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "12", "14", "100" }));
+        ComBox_UIsize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "small", "medium", "large", "incomprehensible" }));
         ComBox_UIsize.addActionListener(this::ComBox_UIsizeActionPerformed);
 
         jLabel2.setText("Change Theme:");
@@ -418,9 +418,51 @@ public class MDSUI extends javax.swing.JFrame {
        
         
     }//GEN-LAST:event_ComBox_FontsActionPerformed
+public int fontSize=12;
 
     private void ComBox_UIsizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComBox_UIsizeActionPerformed
         // TODO add your handling code here:
+        if(ComBox_UIsize.getSelectedItem().toString().equals("small")){
+            fontSize=12;
+        }else if(ComBox_UIsize.getSelectedItem().toString().equals("medium")){
+            fontSize=16;
+        } else if(ComBox_UIsize.getSelectedItem().toString().equals("large")){
+            fontSize=20;
+        }else{
+            fontSize=1000;
+        }
+        Font f=new Font(ComBox_Fonts.getSelectedItem().toString(), Font.PLAIN, fontSize);
+        Component[] Tabs=jPanel1.getComponents();
+        Component[] UInews=Tab_News.getComponents();
+        Component[] UIsettings=Tab_Settings.getComponents();
+        Component[] UIaccount=Tab_Account.getComponents();
+        Component[] UIschedule=Tab_Schedule.getComponents();
+        Component[] UItable=Table_Schedule1.getComponents();
+
+        
+        for(Component comp : UIsettings){
+            comp.setFont(f);
+        }
+        
+        for(Component comp : Tabs){
+            comp.setFont(f);
+        }
+        
+        for(Component comp : UItable){
+            comp.setFont(f);
+        }
+        
+        for(Component comp : UIschedule){
+            comp.setFont(f);
+        }
+        
+        for(Component comp : UIaccount){
+            comp.setFont(f);
+        }
+        
+        for(Component comp : UInews){
+            comp.setFont(f);
+        }
     }//GEN-LAST:event_ComBox_UIsizeActionPerformed
 
     
