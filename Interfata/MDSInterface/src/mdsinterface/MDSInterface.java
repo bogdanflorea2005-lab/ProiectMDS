@@ -4,17 +4,16 @@
  */
 package mdsinterface;
 
+import java.awt.Font;
+
 /**
  *
  * @author Bogdan
  */
 public class MDSInterface {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
-        // TODO code application logic here
     }
     
 }

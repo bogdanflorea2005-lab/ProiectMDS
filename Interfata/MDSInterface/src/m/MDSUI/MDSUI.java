@@ -4,6 +4,9 @@
  */
 package m.MDSUI;
 
+import java.awt.Component;
+import java.awt.Font;
+
 /**
  *
  * @author Bogdan
@@ -31,7 +34,6 @@ public class MDSUI extends javax.swing.JFrame {
         jRadioButton1 = new javax.swing.JRadioButton();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        Tab_Home = new javax.swing.JPanel();
         Tab_Schedule = new javax.swing.JPanel();
         Table_Schedule1 = new javax.swing.JScrollPane();
         Table_Schedule = new javax.swing.JTable();
@@ -52,9 +54,9 @@ public class MDSUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jSlider1 = new javax.swing.JSlider();
         Label_ChangeFont1 = new javax.swing.JLabel();
-        ComBox_Fonts1 = new javax.swing.JComboBox<>();
+        ComBox_UIsize = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
-        ComBox_Fonts2 = new javax.swing.JComboBox<>();
+        ComBox_Theme = new javax.swing.JComboBox<>();
         Tab_News = new javax.swing.JPanel();
         Label_News = new javax.swing.JLabel();
         Panel_News = new javax.swing.JPanel();
@@ -71,19 +73,6 @@ public class MDSUI extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(68, 86, 98));
         jPanel1.setForeground(new java.awt.Color(167, 21, 21));
-
-        javax.swing.GroupLayout Tab_HomeLayout = new javax.swing.GroupLayout(Tab_Home);
-        Tab_Home.setLayout(Tab_HomeLayout);
-        Tab_HomeLayout.setHorizontalGroup(
-            Tab_HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 467, Short.MAX_VALUE)
-        );
-        Tab_HomeLayout.setVerticalGroup(
-            Tab_HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 358, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Home", Tab_Home);
 
         Tab_Schedule.setForeground(new java.awt.Color(44, 49, 57));
 
@@ -202,21 +191,20 @@ public class MDSUI extends javax.swing.JFrame {
 
         Label_ChangeFont.setText("Change Text Font:");
 
-        ComBox_Fonts.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        ComBox_Fonts.setSelectedItem(getFont());
+        ComBox_Fonts.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Segoe UI", "Serif", "Comic Sans MS", "Cracked" }));
         ComBox_Fonts.addActionListener(this::ComBox_FontsActionPerformed);
 
         jLabel1.setText("Volume:");
 
         Label_ChangeFont1.setText("Interface size:");
 
-        ComBox_Fonts1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        ComBox_Fonts1.setSelectedItem(getFont());
+        ComBox_UIsize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "12", "14", "100" }));
+        ComBox_UIsize.addActionListener(this::ComBox_UIsizeActionPerformed);
 
         jLabel2.setText("Change Theme:");
 
-        ComBox_Fonts2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        ComBox_Fonts2.setSelectedItem(getFont());
+        ComBox_Theme.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ComBox_Theme.setSelectedItem(getFont());
 
         javax.swing.GroupLayout Tab_SettingsLayout = new javax.swing.GroupLayout(Tab_Settings);
         Tab_Settings.setLayout(Tab_SettingsLayout);
@@ -235,11 +223,11 @@ public class MDSUI extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(183, 183, 183)))
                 .addGroup(Tab_SettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ComBox_Fonts1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ComBox_UIsize, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(Tab_SettingsLayout.createSequentialGroup()
                         .addComponent(ComBox_Fonts, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(ComBox_Fonts2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ComBox_Theme, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSlider1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -253,11 +241,11 @@ public class MDSUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Tab_SettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Label_ChangeFont1)
-                    .addComponent(ComBox_Fonts1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ComBox_UIsize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Tab_SettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(ComBox_Fonts2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ComBox_Theme, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Tab_SettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -272,6 +260,7 @@ public class MDSUI extends javax.swing.JFrame {
         Panel_News.setBackground(new java.awt.Color(46, 63, 75));
         Panel_News.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(117, 141, 178), 2, true));
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         TextBox_News.setViewportView(jTextArea1);
@@ -298,6 +287,7 @@ public class MDSUI extends javax.swing.JFrame {
         Panel_Recommend.setBackground(new java.awt.Color(46, 63, 75));
         Panel_Recommend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(117, 141, 178), 2, true));
 
+        jTextArea2.setEditable(false);
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         TextBox_Recommend.setViewportView(jTextArea2);
@@ -391,7 +381,47 @@ public class MDSUI extends javax.swing.JFrame {
 
     private void ComBox_FontsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComBox_FontsActionPerformed
         // TODO add your handling code here:
+        
+        Font f=new Font(ComBox_Fonts.getSelectedItem().toString(), Font.PLAIN, 12);
+        Component[] Tabs=jPanel1.getComponents();
+        Component[] UInews=Tab_News.getComponents();
+        Component[] UIsettings=Tab_Settings.getComponents();
+        Component[] UIaccount=Tab_Account.getComponents();
+        Component[] UIschedule=Tab_Schedule.getComponents();
+        Component[] UItable=Table_Schedule1.getComponents();
+
+        
+        for(Component comp : UIsettings){
+            comp.setFont(f);
+        }
+        
+        for(Component comp : Tabs){
+            comp.setFont(f);
+        }
+        
+        for(Component comp : UItable){
+            comp.setFont(f);
+        }
+        
+        for(Component comp : UIschedule){
+            comp.setFont(f);
+        }
+        
+        for(Component comp : UIaccount){
+            comp.setFont(f);
+        }
+        
+        for(Component comp : UInews){
+            comp.setFont(f);
+        }
+        
+       
+        
     }//GEN-LAST:event_ComBox_FontsActionPerformed
+
+    private void ComBox_UIsizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComBox_UIsizeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComBox_UIsizeActionPerformed
 
     
     /**
@@ -424,8 +454,8 @@ public class MDSUI extends javax.swing.JFrame {
     private javax.swing.JButton Button_ChangePass;
     private javax.swing.JButton Button_DeleteAcc;
     private javax.swing.JComboBox<String> ComBox_Fonts;
-    private javax.swing.JComboBox<String> ComBox_Fonts1;
-    private javax.swing.JComboBox<String> ComBox_Fonts2;
+    private javax.swing.JComboBox<String> ComBox_Theme;
+    private javax.swing.JComboBox<String> ComBox_UIsize;
     private javax.swing.JLabel Label_ChangeFont;
     private javax.swing.JLabel Label_ChangeFont1;
     private javax.swing.JLabel Label_Email;
@@ -437,7 +467,6 @@ public class MDSUI extends javax.swing.JFrame {
     private javax.swing.JPanel Panel_News;
     private javax.swing.JPanel Panel_Recommend;
     private javax.swing.JPanel Tab_Account;
-    private javax.swing.JPanel Tab_Home;
     private javax.swing.JPanel Tab_News;
     private javax.swing.JPanel Tab_Schedule;
     private javax.swing.JPanel Tab_Settings;
