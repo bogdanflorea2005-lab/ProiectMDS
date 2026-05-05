@@ -40,13 +40,13 @@ public class MDSUI extends javax.swing.JFrame {
         Label_Schedule = new javax.swing.JLabel();
         Tab_Account = new javax.swing.JPanel();
         Label_Username = new javax.swing.JLabel();
-        TextField_Username = new javax.swing.JTextField();
-        TextField_Email = new javax.swing.JTextField();
+        txtUsername = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
         Label_Email = new javax.swing.JLabel();
         Button_ChangePass = new javax.swing.JButton();
         Label_HoursLearning = new javax.swing.JLabel();
-        TextField_HoursLearn = new javax.swing.JTextField();
-        Button_ChangeAcc = new javax.swing.JButton();
+        txtOre = new javax.swing.JTextField();
+        btnSave = new javax.swing.JButton();
         Button_DeleteAcc = new javax.swing.JButton();
         Tab_Settings = new javax.swing.JPanel();
         Label_ChangeFont = new javax.swing.JLabel();
@@ -119,9 +119,9 @@ public class MDSUI extends javax.swing.JFrame {
 
         Label_Username.setText("Username:");
 
-        TextField_Username.setText("jTextField1");
+        txtUsername.setText("jTextField1");
 
-        TextField_Email.setText("jTextField1");
+        txtEmail.setText("jTextField1");
 
         Label_Email.setText("Email");
 
@@ -130,11 +130,14 @@ public class MDSUI extends javax.swing.JFrame {
 
         Label_HoursLearning.setText("Hours spent learning:");
 
-        TextField_HoursLearn.setText("jTextField1");
+        txtOre.setText("jTextField1");
+        txtOre.addActionListener(this::txtOreActionPerformed);
 
-        Button_ChangeAcc.setText("Change Account");
+        btnSave.setText("Change Account");
+        btnSave.addActionListener(this::btnSaveActionPerformed);
 
         Button_DeleteAcc.setText("Delete Account");
+        Button_DeleteAcc.addActionListener(this::Button_DeleteAccActionPerformed);
 
         javax.swing.GroupLayout Tab_AccountLayout = new javax.swing.GroupLayout(Tab_Account);
         Tab_Account.setLayout(Tab_AccountLayout);
@@ -153,14 +156,14 @@ public class MDSUI extends javax.swing.JFrame {
                             .addComponent(Label_HoursLearning, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(46, 46, 46)
                         .addGroup(Tab_AccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TextField_HoursLearn, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TextField_Email, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TextField_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtOre, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(Tab_AccountLayout.createSequentialGroup()
                 .addGroup(Tab_AccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Button_ChangeAcc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Button_DeleteAcc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -170,18 +173,18 @@ public class MDSUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(Tab_AccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Label_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TextField_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Tab_AccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Label_Email, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TextField_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Button_ChangePass))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Tab_AccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Label_HoursLearning)
-                    .addComponent(TextField_HoursLearn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtOre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(Button_ChangeAcc)
+                .addComponent(btnSave)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Button_DeleteAcc)
                 .addContainerGap())
@@ -465,6 +468,104 @@ public int fontSize=12;
         }
     }//GEN-LAST:event_ComBox_UIsizeActionPerformed
 
+    private void txtOreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtOreActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+    String username = txtUsername.getText();
+    String email = txtEmail.getText();
+    String oreText = txtOre.getText();
+    
+    if(username.isEmpty() || email.isEmpty() || oreText.isEmpty() || username.equals("jTextField1")) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Te rugam sa completezi toate campurile corect!");
+        return;
+    }
+
+    String sql = "INSERT INTO UTILIZATORI (NUME, EMAIL, ORE_DISPONIBILE_ZI) VALUES (?, ?, ?)";
+
+    java.sql.Connection conn = ConexBaza.getConexiune();
+
+    if (conn == null) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Eroare: Nu s-a putut stabili conexiunea cu baza de date!");
+        return;
+    }
+
+    try (java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+        pstmt.setString(1, username);
+        pstmt.setString(2, email);
+        pstmt.setInt(3, Integer.parseInt(oreText));
+
+        int rows = pstmt.executeUpdate();
+        if (rows > 0) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Contul a fost creat!");
+        }
+        
+        conn.close();
+
+    } catch (NumberFormatException e) {
+        javax.swing.JOptionPane.showMessageDialog(this, "La 'Hours' trebuie sa introduci un numar valid!");
+    } catch (java.sql.SQLException e) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Eroare SQL: " + e.getMessage());
+    } catch (Exception e) {
+        
+        javax.swing.JOptionPane.showMessageDialog(this, "Eroare: " + e.toString());
+        e.printStackTrace();
+    } 
+    }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void Button_DeleteAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_DeleteAccActionPerformed
+
+    String username = txtUsername.getText();
+
+    if (username.isEmpty() || username.equals("jTextField1")) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Te rugam sa introduci numele contului pe care vrei sa il stergi.");
+        return;
+    }
+
+    int confirmare = javax.swing.JOptionPane.showConfirmDialog(this, 
+            "Esti sigur ca vrei sa stergi contul " + username + "? Aceasta actiune este ireversibila!", 
+            "Confirmare stergere", 
+            javax.swing.JOptionPane.YES_NO_OPTION);
+
+    if (confirmare == javax.swing.JOptionPane.YES_OPTION) {
+        
+        String sql = "DELETE FROM UTILIZATORI WHERE NUME = ?";
+
+        java.sql.Connection conn = ConexBaza.getConexiune();
+        
+        if (conn == null) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Eroare: Conexiunea la baza de date a esuat.");
+            return;
+        }
+
+        try (java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            
+            pstmt.setString(1, username);
+            
+            int rowsDeleted = pstmt.executeUpdate();
+            
+            if (rowsDeleted > 0) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Contul a fost sters!");
+                // curatare camprui
+                txtUsername.setText("");
+                txtEmail.setText("");
+                txtOre.setText("");
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(this, "Nu s-a gasit niciun cont cu acest nume.");
+            }
+            
+            conn.close();
+
+        } catch (java.sql.SQLException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Eroare SQL la stergere: " + e.getMessage());
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Eroare: " + e.getMessage());
+        }
+    }
+    }//GEN-LAST:event_Button_DeleteAccActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -492,7 +593,6 @@ public int fontSize=12;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Button_ChangeAcc;
     private javax.swing.JButton Button_ChangePass;
     private javax.swing.JButton Button_DeleteAcc;
     private javax.swing.JComboBox<String> ComBox_Fonts;
@@ -516,9 +616,7 @@ public int fontSize=12;
     private javax.swing.JScrollPane Table_Schedule1;
     private javax.swing.JScrollPane TextBox_News;
     private javax.swing.JScrollPane TextBox_Recommend;
-    private javax.swing.JTextField TextField_Email;
-    private javax.swing.JTextField TextField_HoursLearn;
-    private javax.swing.JTextField TextField_Username;
+    private javax.swing.JButton btnSave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -527,5 +625,8 @@ public int fontSize=12;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtOre;
+    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }
