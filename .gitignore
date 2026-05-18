@@ -1,2 +1,4 @@
 node_modules/
 .env
+Interfata/MDSInterface/build/
+Interfata/MDSInterface/dist/
