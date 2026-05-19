@@ -64,7 +64,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTabbedPane1" max="32767" attributes="0"/>
+                  <Component id="jTabbedPane1" pref="423" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -92,18 +92,15 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Table_Schedule1" pref="697" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="Table_Schedule1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="Label_Schedule" min="-2" pref="70" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="Label_Schedule" min="-2" pref="70" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="304" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -208,21 +205,21 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="Label_Email" min="-2" pref="61" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                              <Component id="Label_Username" alignment="0" min="-2" pref="61" max="-2" attributes="0"/>
+                              <Component id="Label_HoursLearning" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
+                              <Component id="Label_Email" alignment="0" min="-2" pref="61" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="txtEmail" min="-2" pref="111" max="-2" attributes="0"/>
+                                  <EmptySpace pref="308" max="32767" attributes="0"/>
                                   <Component id="Button_ChangePass" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="Label_Username" alignment="0" min="-2" pref="61" max="-2" attributes="0"/>
-                                      <Component id="Label_HoursLearning" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtOre" min="-2" pref="97" max="-2" attributes="0"/>
-                                      <Component id="txtEmail" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
-                                      <Component id="txtUsername" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
+                                      <Component id="txtOre" min="-2" pref="111" max="-2" attributes="0"/>
+                                      <Component id="txtUsername" min="-2" pref="111" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
@@ -233,6 +230,9 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="btnSave" max="32767" attributes="0"/>
                               <Component id="Button_DeleteAcc" max="32767" attributes="0"/>
+                              <Component id="Btn_LogIn" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Btn_ChangeAcc" alignment="1" max="32767" attributes="0"/>
+                              <Component id="Btn_LogOut" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -241,25 +241,33 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace pref="17" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="Label_Username" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                              <Component id="Label_Username" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtUsername" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="Label_Email" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="txtEmail" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="Button_ChangePass" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Button_ChangePass" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                                  <Component id="Label_Email" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                                  <Component id="txtEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="Label_HoursLearning" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtOre" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtOre" min="-2" max="-2" attributes="0"/>
+                              <Component id="Label_HoursLearning" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Component id="btnSave" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Btn_LogIn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Btn_ChangeAcc" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Btn_LogOut" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="127" max="32767" attributes="0"/>
                           <Component id="Button_DeleteAcc" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -273,18 +281,15 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtUsername">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUsernameActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtEmail">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="Label_Email">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Email"/>
+                    <Property name="text" type="java.lang.String" value="Email:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="Button_ChangePass">
@@ -297,20 +302,17 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="Label_HoursLearning">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Hours spent learning:"/>
+                    <Property name="text" type="java.lang.String" value="Password:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtOre">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtOreActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnSave">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Change Account"/>
+                    <Property name="text" type="java.lang.String" value="Create Account"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveActionPerformed"/>
@@ -322,6 +324,30 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button_DeleteAccActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="Btn_LogIn">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Log In"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_LogInActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="Btn_ChangeAcc">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Change Account"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_ChangeAccActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="Btn_LogOut">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Log Out"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_LogOutActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -340,28 +366,16 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jLabel2" pref="100" max="32767" attributes="0"/>
-                                      <Component id="Label_ChangeFont" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Label_ChangeFont1" alignment="1" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel1" max="32767" attributes="0"/>
-                                  <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jLabel2" pref="100" max="32767" attributes="0"/>
+                              <Component id="Label_ChangeFont" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Label_ChangeFont1" alignment="1" max="32767" attributes="0"/>
                           </Group>
+                          <EmptySpace pref="276" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="ComBox_UIsize" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Component id="ComBox_Fonts" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
                               <Component id="ComBox_Theme" max="32767" attributes="0"/>
-                              <Component id="jSlider1" alignment="1" max="32767" attributes="0"/>
+                              <Component id="ComBox_Fonts" alignment="0" pref="321" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -385,12 +399,7 @@
                               <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="ComBox_Theme" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jSlider1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="248" max="32767" attributes="0"/>
+                          <EmptySpace pref="304" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -419,13 +428,6 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Volume:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JSlider" name="jSlider1">
-                </Component>
                 <Component class="javax.swing.JLabel" name="Label_ChangeFont1">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Interface size:"/>
@@ -434,11 +436,10 @@
                 <Component class="javax.swing.JComboBox" name="ComBox_UIsize">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
+                      <StringArray count="3">
                         <StringItem index="0" value="small"/>
                         <StringItem index="1" value="medium"/>
                         <StringItem index="2" value="large"/>
-                        <StringItem index="3" value="incomprehensible"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -457,17 +458,16 @@
                 <Component class="javax.swing.JComboBox" name="ComBox_Theme">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
+                      <StringArray count="3">
+                        <StringItem index="0" value="Windows"/>
+                        <StringItem index="1" value="Nimbus"/>
+                        <StringItem index="2" value="Metal"/>
                       </StringArray>
                     </Property>
-                    <Property name="selectedItem" type="java.lang.Object" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection component="Form" name="font" type="property"/>
-                    </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ComBox_ThemeActionPerformed"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -607,7 +607,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="TextBox_Recommend" pref="433" max="32767" attributes="0"/>
+                              <Component id="TextBox_Recommend" pref="675" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -616,7 +616,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="TextBox_Recommend" pref="127" max="32767" attributes="0"/>
+                              <Component id="TextBox_Recommend" pref="157" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
