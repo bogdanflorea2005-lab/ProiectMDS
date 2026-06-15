@@ -15,8 +15,10 @@ import javax.swing.UIManager;
  */
 public class MDSUI extends javax.swing.JFrame {
     
+    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MDSUI.class.getName());
-
+        private int ultimaEstimare = 0;
+        private java.util.List<Integer> idsCompetente = new java.util.ArrayList<>();
     /**
      * Creates new form MDSUI
      */
@@ -40,6 +42,7 @@ public class MDSUI extends javax.swing.JFrame {
         Table_Schedule1 = new javax.swing.JScrollPane();
         Table_Schedule = new javax.swing.JTable();
         Label_Schedule = new javax.swing.JLabel();
+        genereazaProgramButton = new javax.swing.JButton();
         Tab_Account = new javax.swing.JPanel();
         Label_Username = new javax.swing.JLabel();
         txtUsername = new javax.swing.JTextField();
@@ -73,6 +76,15 @@ public class MDSUI extends javax.swing.JFrame {
         Panel_Recommend = new javax.swing.JPanel();
         TextBox_Recommend = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
+        Tab_Competente = new javax.swing.JPanel();
+        competentaField = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        estimeazaButton = new javax.swing.JButton();
+        incarcaCompetente = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        competenteArea = new javax.swing.JList<>();
+        amStudiatButton = new javax.swing.JButton();
 
         jRadioButton1.setText("jRadioButton1");
 
@@ -98,6 +110,9 @@ public class MDSUI extends javax.swing.JFrame {
 
         Label_Schedule.setText("Schedule");
 
+        genereazaProgramButton.setText("Genereaza program");
+        genereazaProgramButton.addActionListener(this::genereazaProgramButtonActionPerformed);
+
         javax.swing.GroupLayout Tab_ScheduleLayout = new javax.swing.GroupLayout(Tab_Schedule);
         Tab_Schedule.setLayout(Tab_ScheduleLayout);
         Tab_ScheduleLayout.setHorizontalGroup(
@@ -107,7 +122,9 @@ public class MDSUI extends javax.swing.JFrame {
                 .addComponent(Table_Schedule1, javax.swing.GroupLayout.DEFAULT_SIZE, 722, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Tab_ScheduleLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(46, 46, 46)
+                .addComponent(genereazaProgramButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Label_Schedule, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(304, 304, 304))
         );
@@ -115,7 +132,9 @@ public class MDSUI extends javax.swing.JFrame {
             Tab_ScheduleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Tab_ScheduleLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Label_Schedule, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Tab_ScheduleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Label_Schedule, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                    .addComponent(genereazaProgramButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Table_Schedule1, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -373,6 +392,81 @@ public class MDSUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("News & Recommendations", Tab_News);
 
+        competentaField.addActionListener(this::competentaFieldActionPerformed);
+
+        jLabel4.setText("jLabel4");
+
+        jLabel5.setText("Numele competentei");
+
+        estimeazaButton.setText("Estimeaza");
+        estimeazaButton.addActionListener(this::estimeazaButtonActionPerformed);
+
+        incarcaCompetente.setText("Adauga competenta");
+        incarcaCompetente.addActionListener(this::incarcaCompetenteActionPerformed);
+
+        competenteArea.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Ore studiate/ Ore estimate" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(competenteArea);
+
+        amStudiatButton.setText("Am studiat");
+        amStudiatButton.addActionListener(this::amStudiatButtonActionPerformed);
+
+        javax.swing.GroupLayout Tab_CompetenteLayout = new javax.swing.GroupLayout(Tab_Competente);
+        Tab_Competente.setLayout(Tab_CompetenteLayout);
+        Tab_CompetenteLayout.setHorizontalGroup(
+            Tab_CompetenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Tab_CompetenteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Tab_CompetenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Tab_CompetenteLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(competentaField, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Tab_CompetenteLayout.createSequentialGroup()
+                        .addGroup(Tab_CompetenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(estimeazaButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(incarcaCompetente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 292, Short.MAX_VALUE)
+                        .addComponent(amStudiatButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36))))
+            .addGroup(Tab_CompetenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Tab_CompetenteLayout.createSequentialGroup()
+                    .addContainerGap(348, Short.MAX_VALUE)
+                    .addComponent(jLabel4)
+                    .addContainerGap(348, Short.MAX_VALUE)))
+        );
+        Tab_CompetenteLayout.setVerticalGroup(
+            Tab_CompetenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Tab_CompetenteLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(Tab_CompetenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(competentaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addGroup(Tab_CompetenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Tab_CompetenteLayout.createSequentialGroup()
+                        .addGroup(Tab_CompetenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(estimeazaButton)
+                            .addComponent(amStudiatButton))
+                        .addGap(18, 18, 18)
+                        .addComponent(incarcaCompetente))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(148, Short.MAX_VALUE))
+            .addGroup(Tab_CompetenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Tab_CompetenteLayout.createSequentialGroup()
+                    .addContainerGap(186, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(202, Short.MAX_VALUE)))
+        );
+
+        jTabbedPane1.addTab("Competente", Tab_Competente);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -532,15 +626,137 @@ public int fontSize=12;
     }//GEN-LAST:event_ComBox_FontsActionPerformed
 
     private void Btn_LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_LogOutActionPerformed
-        // TODO add your handling code here:
+        if (!Session.isLoggedIn()) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Nu ești autentificat.",
+            "Info", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        return;
+    }
+
+    Session.logout();
+
+    // golim câmpurile
+    txtUsername.setText("");
+    txtEmail.setText("");
+    txtParola.setText("");
+    txtOre.setText("");
+    cmboNivel.setSelectedIndex(0);
+
+    // golim lista de competențe
+    competenteArea.setModel(new javax.swing.DefaultListModel<>());
+
+    javax.swing.JOptionPane.showMessageDialog(this, "Te-ai delogat cu succes.");
     }//GEN-LAST:event_Btn_LogOutActionPerformed
 
     private void Btn_ChangeAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ChangeAccActionPerformed
-        // TODO add your handling code here:
+    if (!Session.isLoggedIn()) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Trebuie să te autentifici întâi!",
+            "Atenție", javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    String nume = txtUsername.getText().trim();
+    String email = txtEmail.getText().trim();
+    String oreText = txtOre.getText().trim();
+    String nivelText = (String) cmboNivel.getSelectedItem();
+
+    if (nume.isEmpty() || email.isEmpty() || oreText.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Completează username, email și ore!",
+            "Atenție", javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    int ore;
+    try {
+        ore = Integer.parseInt(oreText);
+        if (ore < 1 || ore > 24) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Orele trebuie să fie între 1 și 24!",
+                "Atenție", javax.swing.JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+    } catch (NumberFormatException ex) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Numărul de ore trebuie să fie un întreg!",
+            "Atenție", javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    int nivel;
+    switch (nivelText) {
+        case "Incepator":   nivel = 1; break;
+        case "Intermediar": nivel = 2; break;
+        case "Avansat":     nivel = 3; break;
+        default:            nivel = 1;
+    }
+
+    final int userId = Session.currentUserId;
+    final String numeFinal = nume, emailFinal = email;
+    final int nivelFinal = nivel, oreFinal = ore;
+
+    new javax.swing.SwingWorker<String, Void>() {
+        @Override
+        protected String doInBackground() throws Exception {
+            return new ApiService().updateAccount(userId, numeFinal, emailFinal, nivelFinal, oreFinal);
+        }
+        @Override
+        protected void done() {
+            try {
+                get();
+                // actualizăm și sesiunea, că s-au schimbat datele
+                Session.currentUserNume = numeFinal;
+                Session.currentUserEmail = emailFinal;
+                javax.swing.JOptionPane.showMessageDialog(null, "Cont actualizat cu succes!");
+            } catch (Exception ex) {
+                String msg = (ex.getCause() != null) ? ex.getCause().getMessage() : ex.getMessage();
+                javax.swing.JOptionPane.showMessageDialog(null, "Eroare: " + msg,
+                    "Eroare", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }.execute();
     }//GEN-LAST:event_Btn_ChangeAccActionPerformed
 
     private void Btn_LogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_LogInActionPerformed
-        // TODO add your handling code here:
+String email = txtEmail.getText().trim();
+    String parola = new String(txtParola.getPassword());
+
+    if (email.isEmpty() || parola.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(this,
+            "Completează email și parolă!",
+            "Atenție", javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    new javax.swing.SwingWorker<String, Void>() {
+        @Override
+        protected String doInBackground() throws Exception {
+            ApiService api = new ApiService();
+            return api.login(email, parola);
+        }
+        @Override
+        protected void done() {
+            try {
+                String json = get();
+                com.google.gson.JsonObject obj =
+                    com.google.gson.JsonParser.parseString(json).getAsJsonObject();
+
+                // salvăm utilizatorul în sesiune
+                Session.currentUserId    = obj.get("id").getAsInt();
+                Session.currentUserNume  = obj.get("nume").getAsString();
+                Session.currentUserEmail = obj.get("email").getAsString();
+
+                javax.swing.JOptionPane.showMessageDialog(null,
+                    "Bun venit, " + Session.currentUserNume + "!");
+
+                txtParola.setText("");
+                
+                afiseazaCompetente();
+
+            } catch (Exception ex) {
+                String msg = (ex.getCause() != null) ? ex.getCause().getMessage() : ex.getMessage();
+                javax.swing.JOptionPane.showMessageDialog(null,
+                    "Autentificare eșuată: " + msg,
+                    "Eroare", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }.execute();     
     }//GEN-LAST:event_Btn_LogInActionPerformed
 
     private void Button_DeleteAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_DeleteAccActionPerformed
@@ -554,7 +770,6 @@ public int fontSize=12;
         return;
     }
     
-    // dialog de confirmare - acțiune destructivă
     int confirm = javax.swing.JOptionPane.showConfirmDialog(this,
         "Esti sigur?\n" +
         "Aceasta actiune este IREVERSIBILA,\n" +
@@ -663,7 +878,71 @@ public int fontSize=12;
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void Button_ChangePassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_ChangePassActionPerformed
-        // TODO add your handling code here:
+    if (!Session.isLoggedIn()) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Trebuie să te autentifici întâi!",
+            "Atenție", javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    // câmpurile pentru dialog
+    javax.swing.JPasswordField campVeche = new javax.swing.JPasswordField();
+    javax.swing.JPasswordField campNoua = new javax.swing.JPasswordField();
+    javax.swing.JPasswordField campConfirm = new javax.swing.JPasswordField();
+
+    Object[] continut = {
+        "Parola actuală:", campVeche,
+        "Parola nouă:", campNoua,
+        "Confirmă parola nouă:", campConfirm
+    };
+
+    int optiune = javax.swing.JOptionPane.showConfirmDialog(this, continut,
+        "Schimbă parola", javax.swing.JOptionPane.OK_CANCEL_OPTION);
+
+    if (optiune != javax.swing.JOptionPane.OK_OPTION) {
+        return;   // a apăsat Cancel
+    }
+
+    String veche = new String(campVeche.getPassword());
+    String noua = new String(campNoua.getPassword());
+    String confirm = new String(campConfirm.getPassword());
+
+    // validări
+    if (veche.isEmpty() || noua.isEmpty() || confirm.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Completează toate câmpurile!",
+            "Atenție", javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    if (!noua.equals(confirm)) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Parolele noi nu coincid!",
+            "Atenție", javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    if (noua.equals(veche)) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Parola nouă trebuie să difere de cea veche!",
+            "Atenție", javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    final int userId = Session.currentUserId;
+    final String vecheFinal = veche, nouaFinal = noua;
+
+    new javax.swing.SwingWorker<String, Void>() {
+        @Override
+        protected String doInBackground() throws Exception {
+            return new ApiService().changePassword(userId, vecheFinal, nouaFinal);
+        }
+        @Override
+        protected void done() {
+            try {
+                get();
+                javax.swing.JOptionPane.showMessageDialog(null, "Parolă schimbată cu succes!");
+            } catch (Exception ex) {
+                String msg = (ex.getCause() != null) ? ex.getCause().getMessage() : ex.getMessage();
+                javax.swing.JOptionPane.showMessageDialog(null, "Eroare: " + msg,
+                    "Eroare", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }.execute();
     }//GEN-LAST:event_Button_ChangePassActionPerformed
 
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
@@ -677,6 +956,235 @@ public int fontSize=12;
     private void cmboNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmboNivelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmboNivelActionPerformed
+
+    private void competentaFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_competentaFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_competentaFieldActionPerformed
+
+    private void incarcaCompetenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incarcaCompetenteActionPerformed
+ 
+        if (!Session.isLoggedIn()) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Trebuie să te autentifici întâi!",
+            "Atenție", javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    String denumire = competentaField.getText().trim();
+    if (denumire.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Scrie numele competenței!",
+            "Atenție", javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    if (ultimaEstimare <= 0) {
+        javax.swing.JOptionPane.showMessageDialog(this,
+            "Apasă întâi \"Estimează\" ca să obții numărul de ore.",
+            "Atenție", javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    final int userId = Session.currentUserId;
+    final int oreEstimate = ultimaEstimare;
+
+    new javax.swing.SwingWorker<String, Void>() {
+        @Override
+        protected String doInBackground() throws Exception {
+            return new ApiService().adaugaCompetenta(userId, denumire, oreEstimate);
+        }
+        @Override
+        protected void done() {
+            try {
+                get();
+                javax.swing.JOptionPane.showMessageDialog(null, "Competență adăugată!");
+                competentaField.setText("");
+                ultimaEstimare = 0;
+                afiseazaCompetente();  
+            } catch (Exception ex) {
+                String msg = (ex.getCause() != null) ? ex.getCause().getMessage() : ex.getMessage();
+                javax.swing.JOptionPane.showMessageDialog(null, "Eroare: " + msg,
+                    "Eroare", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }.execute(); 
+    }//GEN-LAST:event_incarcaCompetenteActionPerformed
+
+    private void afiseazaCompetente() {
+    if (!Session.isLoggedIn()) return;
+    final int userId = Session.currentUserId;
+
+    new javax.swing.SwingWorker<String, Void>() {
+        @Override
+        protected String doInBackground() throws Exception {
+            return new ApiService().getCompetente(userId);
+        }
+        @Override
+        protected void done() {
+            try {
+                com.google.gson.JsonArray arr =
+                    com.google.gson.JsonParser.parseString(get()).getAsJsonArray();
+
+                javax.swing.DefaultListModel<String> model = new javax.swing.DefaultListModel<>();
+                idsCompetente.clear();
+                for (com.google.gson.JsonElement el : arr) {
+                    com.google.gson.JsonObject c = el.getAsJsonObject();
+                    idsCompetente.add(c.get("id").getAsInt());         
+                    model.addElement(
+                        c.get("denumire").getAsString() + ": " +
+                        c.get("ore_studiate").getAsInt() + " / " +
+                        c.get("ore_estimate").getAsInt() + " ore"
+                    );
+                }
+                competenteArea.setModel(model);   
+            } catch (Exception ex) {
+                   ex.printStackTrace();
+            }
+        }
+    }.execute();
+}
+    
+    private void estimeazaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estimeazaButtonActionPerformed
+    String denumire = competentaField.getText().trim();
+    String nivel = (String) cmboNivel.getSelectedItem();   // de pe tab-ul Account
+
+    if (denumire.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Scrie ce competență vrei să estimezi!",
+            "Atenție", javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    new javax.swing.SwingWorker<String, Void>() {
+        @Override
+        protected String doInBackground() throws Exception {
+            return new ApiService().estimeazaCompetenta(denumire, nivel);
+        }
+        @Override
+        protected void done() {
+            try {
+                com.google.gson.JsonObject obj =
+                    com.google.gson.JsonParser.parseString(get()).getAsJsonObject();
+                int ore = obj.get("ore_estimate").getAsInt();
+                String explicatie = obj.has("explicatie") ? obj.get("explicatie").getAsString() : "";
+
+                ultimaEstimare = ore;   // reținem pentru butonul Adaugă
+
+                javax.swing.JOptionPane.showMessageDialog(null,
+                    "Estimare pentru \"" + denumire + "\": " + ore + " ore.\n\n" + explicatie);
+            } catch (Exception ex) {
+                String msg = (ex.getCause() != null) ? ex.getCause().getMessage() : ex.getMessage();
+                javax.swing.JOptionPane.showMessageDialog(null, "Eroare: " + msg,
+                    "Eroare", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }.execute();     
+    }//GEN-LAST:event_estimeazaButtonActionPerformed
+
+    private void genereazaProgramButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genereazaProgramButtonActionPerformed
+    if (!Session.isLoggedIn()) {
+    javax.swing.JOptionPane.showMessageDialog(this,
+        "Trebuie să te autentifici întâi!",
+        "Atenție", javax.swing.JOptionPane.WARNING_MESSAGE);
+    return;
+}
+final int userId = Session.currentUserId;
+
+    new javax.swing.SwingWorker<String, Void>() {
+        @Override
+        protected String doInBackground() throws Exception {
+            ApiService api = new ApiService();
+            return api.genereazaProgram(userId);
+        }
+        @Override
+        protected void done() {
+            try {
+                String json = get();
+                com.google.gson.JsonObject obj =
+                    com.google.gson.JsonParser.parseString(json).getAsJsonObject();
+                com.google.gson.JsonArray program = obj.getAsJsonArray("program");
+
+                String[] zile = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
+
+                java.util.Map<String, java.util.List<String>> peZile = new java.util.HashMap<>();
+                for (String zi : zile) peZile.put(zi, new java.util.ArrayList<>());
+
+                for (com.google.gson.JsonElement el : program) {
+                    com.google.gson.JsonObject s = el.getAsJsonObject();
+                    String zi = s.get("zi").getAsString();
+                    String materie = s.get("materie").getAsString();
+                    int durata = s.get("durata_minute").getAsInt();
+                    if (peZile.containsKey(zi)) {
+                        peZile.get(zi).add(materie + " (" + durata + " min)");
+                    }
+                }
+
+                int maxRanduri = 0;
+                for (String zi : zile) maxRanduri = Math.max(maxRanduri, peZile.get(zi).size());
+
+                javax.swing.table.DefaultTableModel model =
+                    new javax.swing.table.DefaultTableModel(zile, 0);
+                for (int r = 0; r < maxRanduri; r++) {
+                    Object[] rand = new Object[7];
+                    for (int c = 0; c < 7; c++) {
+                        java.util.List<String> ses = peZile.get(zile[c]);
+                        rand[c] = (r < ses.size()) ? ses.get(r) : "";
+                    }
+                    model.addRow(rand);
+                }
+                Table_Schedule.setModel(model);   // ajustează numele tabelului tău
+
+            } catch (Exception ex) {
+                String msg = (ex.getCause() != null) ? ex.getCause().getMessage() : ex.getMessage();
+                javax.swing.JOptionPane.showMessageDialog(null,
+                    "Eroare: " + msg, "Eroare", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }.execute();      
+    }//GEN-LAST:event_genereazaProgramButtonActionPerformed
+
+    private void amStudiatButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_amStudiatButtonActionPerformed
+    int index = competenteArea.getSelectedIndex();
+    if (index < 0) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Selectează o competență din listă!",
+            "Atenție", javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    if (index >= idsCompetente.size()) {
+    javax.swing.JOptionPane.showMessageDialog(this,
+        "Lista nu e sincronizată. Reîncarcă competențele.",
+        "Atenție", javax.swing.JOptionPane.WARNING_MESSAGE);
+    afiseazaCompetente();   // reîncărcăm ca să se repare
+    return;
+}
+    final int competentaId = idsCompetente.get(index);
+
+    String oreText = javax.swing.JOptionPane.showInputDialog(this, "Câte ore ai studiat?");
+    if (oreText == null) return;   // a apăsat Cancel
+
+    final int ore;
+    try {
+        ore = Integer.parseInt(oreText.trim());
+        if (ore <= 0) throw new NumberFormatException();
+    } catch (NumberFormatException ex) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Introdu un număr pozitiv de ore!",
+            "Atenție", javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    new javax.swing.SwingWorker<String, Void>() {
+        @Override
+        protected String doInBackground() throws Exception {
+            return new ApiService().adaugaStudiu(competentaId, ore);
+        }
+        @Override
+        protected void done() {
+            try {
+                get();
+                afiseazaCompetente();   // reîmprospătăm lista cu noile ore
+            } catch (Exception ex) {
+                String msg = (ex.getCause() != null) ? ex.getCause().getMessage() : ex.getMessage();
+                javax.swing.JOptionPane.showMessageDialog(null, "Eroare: " + msg,
+                    "Eroare", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }.execute();
+    }//GEN-LAST:event_amStudiatButtonActionPerformed
 
     
     /**
@@ -724,6 +1232,7 @@ public int fontSize=12;
     private javax.swing.JPanel Panel_News;
     private javax.swing.JPanel Panel_Recommend;
     private javax.swing.JPanel Tab_Account;
+    private javax.swing.JPanel Tab_Competente;
     private javax.swing.JPanel Tab_News;
     private javax.swing.JPanel Tab_Schedule;
     private javax.swing.JPanel Tab_Settings;
@@ -731,13 +1240,22 @@ public int fontSize=12;
     private javax.swing.JScrollPane Table_Schedule1;
     private javax.swing.JScrollPane TextBox_News;
     private javax.swing.JScrollPane TextBox_Recommend;
+    private javax.swing.JButton amStudiatButton;
     private javax.swing.JButton btnSave;
     private javax.swing.JComboBox<String> cmboNivel;
+    private javax.swing.JTextField competentaField;
+    private javax.swing.JList<String> competenteArea;
+    private javax.swing.JButton estimeazaButton;
+    private javax.swing.JButton genereazaProgramButton;
+    private javax.swing.JButton incarcaCompetente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
